@@ -5,13 +5,17 @@ package com.teclab.dremon.engine;
 public class MainScene extends DisplayContainer{
 
     npc bad;
+    npc good;
     public MainScene(Resources resources){
 
         super(resources);
         for(int i=1; i<7;++i){
             bad = new npc("bad"+i, resources);
-            bad.x = (int)(Math.random()*500.0f);
+           good = new npc("good"+i, resources);
+            bad.y = (int)(Math.random()*500.0f);
+            good.x = (int)(Math.random()*500.0f);
             addChild(bad);
+            addChild(good);
         }
     }
 
