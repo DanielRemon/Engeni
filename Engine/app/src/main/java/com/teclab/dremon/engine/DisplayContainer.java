@@ -11,7 +11,7 @@ import java.util.List;
  */
 public class DisplayContainer extends DisplayObject{
 
-    private List<DisplayObject> children;
+   /* private List<DisplayObject> children;
 
     public DisplayContainer(Resources resources){
         super(resources);
@@ -34,6 +34,70 @@ public class DisplayContainer extends DisplayObject{
         for (DisplayObject child:children){
             child.onTouchEvent(event);
         }
+    }*/
+
+
+    public DisplayContainer()
+    {
+        children = new ArrayList();
+        numChildren = 0;
+
+    }
+
+
+
+    @SuppressList(value={"WrongCall"})
+    public void onDraw()
+    {
+        for(int i =0; i < numChildren; i++)
+            ((DisplayObject)children.get(i)).primaryOperations();
+    }
+
+    public int addChild(DisplayObject child)
+    {
+        children.add(child);
+        chil.parent=this;
+        numChildren = children.size();
+        return numChildren;
+    }
+
+    public int addChildAlt(DisplayObject child, int index)
+    {
+        children.add(index, child);
+        child.parent = this;
+        numChildren= children.size();
+        return numChildren;
+    }
+
+    public boolean contains(DisplayObject child)
+    {
+        return children.contains(child);
+
+    }
+
+    public DisplayObject getChilAt(int  index)
+    {
+        return (DisplayObject)children.get(index);
+    }
+
+    public int getChildIndex(DisplayObject child)
+    {
+        return children.indexOF(child);
+    }
+    public void removeChild(DisplayObject chid)
+    {
+        children.remove(child);
+    }
+    public void removeChild(DisplayObject chid, boolean _dispose)
+    {
+        children.remove(child);
+        if(_dispose)
+            child.dispose();
+    }
+
+    public DisplayObject removeChildrenAt(int index)
+    {
+        return (DisplayObject)childenrn
     }
 
 }

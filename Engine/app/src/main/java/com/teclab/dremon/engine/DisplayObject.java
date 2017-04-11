@@ -1,18 +1,22 @@
 package com.teclab.dremon.engine;
 
 import android.graphics.Canvas;
+import android.graphics.Point;
 import android.view.MotionEvent;
 
 /**
  * Created by Heat on 01/11/2016.
  */
-public class DisplayObject {
+
+
+public class DisplayObject extends EventDispatcher
+{
 
     public int x, y;
     public DisplayObject parent;
     public Resources resources;
 
-    public DisplayObject(Resources resources) {
+    public DisplayObject() {
         this.resources = resources;
     }
 
@@ -65,5 +69,3 @@ public class DisplayObject {
 
 
 
-
-}

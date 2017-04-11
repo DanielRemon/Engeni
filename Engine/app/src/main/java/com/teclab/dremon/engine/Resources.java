@@ -10,6 +10,22 @@ import java.util.HashMap;
  */
 public class Resources {
 
+    private HashMap texturePool;
+    public SoundManager sounds;
+    public Context mContext;
+    public int fps;
+    public Canvas canvas;
+    public PointF aspect;
+    private String hashKey;
+
+    public Resources(Context _context)
+    {
+        fps = 32;
+        hash
+    }
+
+
+    /*
     private GameView view;
     private HashMap<String,Bitmap> pool;
 
@@ -30,4 +46,5 @@ public class Resources {
         return this.pool.remove(resource);
     }
 
+    */
 }
