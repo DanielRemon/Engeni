@@ -4,12 +4,14 @@ package com.teclab.dremon.engine;
  * Created by Alumno on 11/04/2017.
  */
 
-package com.gtem.engine;
 
 
 public class Event
 {
-
+    public EventDipatcher currentTarget;
+    public EventDipatcher Target;
+    public String type;
+    public Object data;
 
     public Event(String _type)
     {
@@ -24,8 +26,5 @@ public class Event
     }
 
 
-    public EventDipatcher currentTarget;
-    public EventDipatcher Target;
-    public String type;
-    public Object data;
+
 }
